@@ -1,0 +1,12 @@
+<div class="system-nav">
+  <%= render(ContainerComponent.new()) do %>
+    <div class="system-nav__content">
+      <div class="system-nav__branding">
+        <%= render(LogoComponent.new()) %>
+      </div>
+      <div class="system-nav__actions">
+        <%= content %>
+      </div>
+    </div>
+  <% end %>
+</div>

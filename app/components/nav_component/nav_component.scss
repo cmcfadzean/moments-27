@@ -1,0 +1,11 @@
+.system-nav {
+  border-bottom: system-border();
+  padding: system-spacing() 0;
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+  &__branding {
+    flex: 1;
+  }
+}
