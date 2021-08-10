@@ -12,5 +12,7 @@
 
   <body>
     <%= yield %>
+    <%= render(AlertComponent.new(id: "notice", message: notice)) %>
+    <%= render(AlertComponent.new(id: "alert", message: alert)) %>
   </body>
 </html>

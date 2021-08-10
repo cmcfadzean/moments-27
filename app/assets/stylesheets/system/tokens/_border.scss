@@ -1,0 +1,9 @@
+@function system-border($key: default) {
+  $value: map-get($system-borders, $key);
+  @return $value;
+}
+
+$system-borders: (
+  default: 1px solid rgba(0,0,0,.07),
+  radius: 7px,
+);
