@@ -8,9 +8,9 @@
 .system {
   &-alert {
     @include simple-ease(all);
-    background: system-color(primary);
+    background: system-color(gray, 900);
     border-radius: system-border(radius);
-    color: #fff;
+    color: system-color(gray, 100);
     display: inline-block;
     margin: 0px auto;
     position: fixed;
