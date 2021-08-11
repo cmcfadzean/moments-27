@@ -1,0 +1,14 @@
+<div class="system-footer">
+  <%= render(ContainerComponent.new()) do %>
+    <div class="system-footer__content">
+      <div class="system-footer__left">
+        © Moments <%= Date.current.year %>
+      </div>
+      <div class="system-footer__right">
+        <%= link_to "⚙️ Settings", edit_user_registration_path %>
+        <%= link_to "👋 Logout", destroy_user_session_path, method: :delete %>
+        <%= content %>
+      </div>
+    </div>
+  <% end %>
+</div>

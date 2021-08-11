@@ -1,0 +1,29 @@
+.system-moment {
+  display: flex;
+  background: system-color(gray, 100);
+  margin: system-spacing() 0;
+  padding: system-spacing();
+  border-radius: system-border(radius);
+  &__info {
+    flex: 1;
+    font-family: 'STIX Two Text', serif;
+  }
+  &__title {
+    font-size: system-font-size(3xl);
+  }
+  &__description {
+    font-size: system-font-size(lg);
+  }
+  &__date {
+    background: system-color(gray, 900);
+    min-width: 70px;
+    color: #fff;
+    font-size: system-font-size(3xl);
+    line-height: 1;
+    padding: system-spacing(sm);
+    border-radius: system-border(radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

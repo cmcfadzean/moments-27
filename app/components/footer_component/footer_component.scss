@@ -1,0 +1,14 @@
+.system-footer {
+  border-top: system-border();
+  padding: system-spacing() 0;
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+  &__left {
+    flex: 1;
+  }
+  a {
+    margin-left: system-spacing();
+  }
+}

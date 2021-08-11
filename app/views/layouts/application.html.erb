@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Starter27</title>
+    <title>Moments</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚫</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to current_user.email, edit_user_registration_path, :class => '#' %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => '#'  %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => '#'  %>
-      <%= link_to "Login", new_user_session_path, :class => '#'  %>
-    <% end %>
     <%= yield %>
+    <%= render(FooterComponent.new()) %>
     <%= render(AlertComponent.new(id: "notice", message: notice)) %>
     <%= render(AlertComponent.new(id: "alert", message: alert)) %>
   </body>

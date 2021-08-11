@@ -1,37 +1,31 @@
-<%= form_with(model: moment) do |form| %>
-  <% if moment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(moment.errors.count, "error") %> prohibited this moment from being saved:</h2>
+<%= render(ContainerComponent.new()) do %>
+  <%= form_with(model: moment) do |form| %>
+    <% if moment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(moment.errors.count, "error") %> prohibited this moment from being saved:</h2>
 
-      <ul>
-        <% moment.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% moment.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.text_field :title, placeholder: "title" %>
+    </div>
+
+    <div class="field">
+      <%= form.text_area :description, placeholder: "description"  %>
+    </div>
+
+    <div class="field">
+      <%= form.date_select :date %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
