@@ -31,7 +31,7 @@ gem "view_component", require: "view_component/engine"
 gem 'devise'
 
 group :production do
-  gem 'pg'
+  gem 'pg', '0.21.0'
 end 
 
 group :development, :test do
