@@ -2,11 +2,20 @@
   <%= link_to '📅 New Moment', new_moment_path %>
 <% end %>
 <%= render(ContainerComponent.new()) do %>
-  <% if @moments.blank? %>
+  <% if @upcoming_moments.blank? && @past_moments.blank?%>
     <%= image_tag "null.svg" %>
   <% else %>
-    <% @moments.each do |moment| %>
-      <%= render(MomentComponent.new(title: moment.title, date: ( moment.date - Date.today() ).to_i, link: edit_moment_path(moment), description: moment.description)) %>
+    <%= render(TabsComponent.new()) do |component| %>
+      <% component.with(:tab_one) do %>
+        <% @upcoming_moments.each do |moment| %>
+          <%= render(MomentComponent.new(title: moment.title, date: ( moment.date - Date.today() ).to_i, link: edit_moment_path(moment), description: moment.description)) %>
+        <% end %>
+      <% end %>
+      <% component.with(:tab_two) do %>
+        <% @past_moments.each do |moment| %>
+          <%= render(MomentComponent.new(title: moment.title, date: ( moment.date - Date.today() ).to_i, link: edit_moment_path(moment), description: moment.description)) %>
+        <% end %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
