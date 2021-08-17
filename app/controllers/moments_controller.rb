@@ -4,7 +4,8 @@ class MomentsController < ApplicationController
 
   # GET /moments or /moments.json
   def index
-    @moments = current_user.moments.order('date ASC')
+    @upcoming_moments = current_user.moments.order('date ASC').where('date > ?', DateTime.now)
+    @past_moments = current_user.moments.order('date DESC').where('date < ?', DateTime.now)
   end
 
   # GET /moments/1 or /moments/1.json
