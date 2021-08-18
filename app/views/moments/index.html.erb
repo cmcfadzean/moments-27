@@ -8,12 +8,12 @@
     <%= render(TabsComponent.new()) do |component| %>
       <% component.with(:tab_one) do %>
         <% @upcoming_moments.each do |moment| %>
-          <%= render(MomentComponent.new(title: moment.title, date: ( moment.date - Date.today() ).to_i, link: edit_moment_path(moment), description: moment.description)) %>
+          <%= render(MomentComponent.new(title: moment.title, date: moment.date, link: edit_moment_path(moment), description: moment.description)) %>
         <% end %>
       <% end %>
       <% component.with(:tab_two) do %>
         <% @past_moments.each do |moment| %>
-          <%= render(MomentComponent.new(title: moment.title, date: ( moment.date - Date.today() ).to_i, link: edit_moment_path(moment), description: moment.description)) %>
+          <%= render(MomentComponent.new(title: moment.title, date: moment.date, link: edit_moment_path(moment), description: moment.description)) %>
         <% end %>
       <% end %>
     <% end %>
