@@ -1,7 +1,10 @@
 <%= link_to @link, class: "system-moment" do %>
-  <div class="system-moment__info">
-    <div class="system-moment__title"><%= @title %></div>
-    <div class="system-moment__description"><%= @description %></div>
+  <div class="system-moment__content">
+    <div class="system-moment__info">
+      <div class="system-moment__title"><%= @title %></div>
+      <div class="system-moment__description"><%= @description %></div>
+    </div>
+    <div class="system-moment__days"><%= ( @date - Date.today() ).to_i %></div>
   </div>
-  <div class="system-moment__date"><%= @date %></div>
+  <div class="system-moment__date"><%= @date.strftime("%B %d, %Y") %></div>
 <% end %>
